@@ -44,6 +44,7 @@ function App() {
           </Card.Text>
         </Card.Body>
       </Card>
+      <a href="./PrivacyPolicy.html">Privacy Policy</a>
     </div>
   );
 }
