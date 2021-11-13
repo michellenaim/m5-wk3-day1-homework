@@ -27,7 +27,7 @@ function App() {
         <Card.Body>
           <Card.Text>
             {!login && (
-              <>
+              <React.Fragment>
                 <h3>Please login using one of the following:</h3>
                 <LoginForm />
                 <FacebookLogin
@@ -38,7 +38,7 @@ function App() {
                   callback={responseFacebook}
                   icon="fa-facebook"
                 />
-              </>
+              </React.Fragment>
             )}
             {login && <Home fbpic={picture} fbdata={data} />}
           </Card.Text>
@@ -65,13 +65,13 @@ const LoginForm = () => {
   );
 };
 
-const Home = (fbpic, fbdata) => {
+const Home = ({ fbpic, fbdata }) => {
   return (
-    <>
+    <React.Fragment>
       <img src={fbpic} alt={fbdata.name} />
       <h3 className="d-inline text-success mx-2">Welcome back {fbdata.name}</h3>
       <p className="my-5">This is the home page of the app.</p>
-    </>
+    </React.Fragment>
   );
 };
 
